@@ -39,17 +39,16 @@ const loginLimiter = rateLimit({
 // DATABASE CONNECTION (POSTGRESQL)
 // ============================================
 
-const DATABASE_URL = process.env.DATABASE_URL || 
-  'postgresql://dssrt_user:dssrt_password_2024@localhost:5432/dssrt';
+const DATABASE_URL = process.env.DATABASE_URL;
 
 const sequelize = new Sequelize(DATABASE_URL, {
   dialect: 'postgres',
   logging: false,
   dialectOptions: {
-    ssl: {
+    ssl: process.env.NODE_ENV === 'production' ? {
       require: true,
       rejectUnauthorized: false
-    }
+    } : false
   }
 });
 
@@ -220,14 +219,31 @@ const createDefaultAdmin = async () => {
   }
 };
 
-// Initialize after connection
-sequelize.sync().then(() => {
-  createDefaultAdmin();
-});
-
 // ============================================
 // API ROUTES
 // ============================================
+
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'DSSRT Backend API',
+    version: '1.0.0',
+    endpoints: {
+      health: 'GET /api/health',
+      submitReport: 'POST /api/reports',
+      login: 'POST /api/auth/login',
+      dashboard: 'GET /api/dashboard (admin)'
+    }
+  });
+});
+
+// API root
+app.get('/api', (req, res) => {
+  res.json({
+    status: 'OK',
+    timestamp: new Date().toISOString()
+  });
+});
 
 // Health Check
 app.get('/api/health', (req, res) => {
@@ -269,7 +285,7 @@ const initializeSymptoms = async () => {
 // Call after sync
 sequelize.sync().then(() => {
   createDefaultAdmin();
-  initializeSymptoms();  // ← ADD THIS LINE
+  initializeSymptoms(); 
 });
 
 // ============================================
@@ -587,6 +603,7 @@ process.on('SIGTERM', () => {
   });
 
 });
+
 
 
 
