@@ -259,22 +259,6 @@ app.get('/api/health', (req, res) => {
 // INITIALIZE SYMPTOMS IN DATABASE
 // ============================================
 
-const createDefaultAdmin = async () => {
-  try {
-    const adminExists = await Admin.findOne({ where: { username: 'admin' } });
-    if (!adminExists) {
-      const hashedPassword = await bcrypt.hash('healthadmin2024', 10);
-      await Admin.create({
-        username: 'admin',
-        password: hashedPassword
-      });
-      console.log('Default admin created');
-    }
-  } catch (error) {
-    console.error('Error creating default admin:', error);
-  }
-};
-
 const initializeSymptoms = async () => {
   try {
     const SYMPTOMS = [
@@ -620,6 +604,7 @@ process.on('SIGTERM', () => {
   });
 
 });
+
 
 
 
