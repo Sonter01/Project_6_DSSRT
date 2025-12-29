@@ -12,7 +12,7 @@ const app = express();
 // MIDDLEWARE CONFIGURATION
 // ============================================
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',  
+  origin: process.env.FRONTEND_URL || 'https://symptom-reporter.onrender.com',  
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
   allowedHeaders: ['Content-Type', 'Authorization'] 
@@ -584,13 +584,12 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => { 
   console.log('');
   console.log('   ============================================');
   console.log(`   DSSRT Backend Server Running (PostgreSQL)`);
   console.log(`   Port: ${PORT}`);
-  console.log(`   Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`   API: http://localhost:${PORT}/api`);
+  console.log(`   Environment: ${process.env.NODE_ENV || 'production'}`);
   console.log('   ============================================');
   console.log('');
 });
@@ -604,6 +603,7 @@ process.on('SIGTERM', () => {
   });
 
 });
+
 
 
 
