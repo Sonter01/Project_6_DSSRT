@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import axios from 'axios';
 import './App.css';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL || 'https://symptom-backend-8i24.onrender.com';
 
 const SYMPTOMS = [
   'Fever', 'Dry Cough', 'Wet Cough', 'Shortness of Breath',
@@ -330,5 +330,6 @@ function App() {
 
 
 export default App;
+
 
 
