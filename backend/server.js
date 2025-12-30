@@ -14,6 +14,7 @@ const app = express();
 app.use(cors({
   origin: [
      'https://project6dssrt.vercel.app',  // frontend URL
+    /\.vercel\.app$/,
     'http://localhost:3000',  // For local testing
   ],
   credentials: true,
@@ -606,6 +607,7 @@ process.on('SIGTERM', () => {
   });
 
 });
+
 
 
 
