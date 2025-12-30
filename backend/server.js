@@ -12,10 +12,13 @@ const app = express();
 // MIDDLEWARE CONFIGURATION
 // ============================================
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',  
+  origin: [
+    'https://symptom-reporter.onrender.com',  // frontend URL
+    'http://localhost:3000',  // For local testing
+  ],
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-  allowedHeaders: ['Content-Type', 'Authorization'] 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
@@ -603,6 +606,7 @@ process.on('SIGTERM', () => {
   });
 
 });
+
 
 
 
