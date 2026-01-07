@@ -1,4 +1,4 @@
-Introduction
+**Introduction**
 Public health surveillance traditionally relies on clinical records, hospital admissions and labo-
 ratory testing to track disease spread. While effective, these methods often lag behind real-time
 community experiences, leaving gaps in early detection. The Disease Symptom Self-Reporting
@@ -9,7 +9,7 @@ reports to public health authorities for early trend analysis. The core focus is
 friendly, privacy-centric data collection mechanism that aids in community-level surveillance
 without collecting personally identifying information.
 
-1. Problem Statement
+**1. Problem Statement**
 During periods of heightened public health concern, traditional surveillance systems are slow
 to capture community-wide trends in subjective symptoms. People often need a clear, trusted
 mechanism to report how they feel without fear of revealing personal identity. There is a need
