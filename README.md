@@ -1,4 +1,4 @@
-**Introduction**
+**Introduction**\\
 Public health surveillance traditionally relies on clinical records, hospital admissions and labo-
 ratory testing to track disease spread. While effective, these methods often lag behind real-time
 community experiences, leaving gaps in early detection. The Disease Symptom Self-Reporting
@@ -16,7 +16,7 @@ mechanism to report how they feel without fear of revealing personal identity. T
 for a lightweight, easily accessible, and privacy-respecting tool to gather real-time, non-clinical
 data on symptom prevalence to support preemptive public health interventions.
 
-2. Source Code
+**2. Source Code**
 The complete codebase for DSSRT is hosted on GitHub:
 Project 6 DSSRT Repository
 Contents of the repository include:
