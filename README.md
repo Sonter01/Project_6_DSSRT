@@ -27,17 +27,17 @@ Contents of the repository include:
  Database: PostgreSQL schema for storing timestamped reports.
  Deployment: Full configuration for Vercel (frontend) and Render (backend and database).
 
-**4. Live Application**
+**3. Live Application**
 The DSSRT application is deployed and accessible online:
 Live DSSRT Application
 Features available in the live app:
 ** Public Reporting Form:**
-– Users can anonymously submit symptom check-ins.
-– Only symptoms and general location (zip code) are collected.
- Secure Admin Login:
-– Authorized health officials can log in to view aggregated reports.
-– Dashboard includes charts, trends, and geographic summaries.
-**5. Data Flow and Privacy Diagram**
+i.  Users can anonymously submit symptom check-ins.
+ii. Only symptoms and general location (zip code) are collected.
+ **Secure Admin Login:**
+i. Authorized health officials can log in to view aggregated reports.
+ii. Dashboard includes charts, trends, and geographic summaries.
+**4. Data Flow and Privacy Diagram**
 The DSSRT emphasizes strict privacy and avoids collecting any Personally Identifiable In-
 formation (PII).
 
